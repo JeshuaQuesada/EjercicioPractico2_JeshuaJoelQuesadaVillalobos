@@ -19,7 +19,7 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private String id_Pelicula;
+    private Long id_Pelicula;
     //private Long idCategoria;  ya no se usa por el @manyToOne
     private String fecha;
     private String hora;
@@ -35,7 +35,7 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(String id_Pelicula, boolean activo) {
+    public Producto(Long id_Pelicula, boolean activo) {
         this.id_Pelicula = id_Pelicula;
         this.activo = activo;
     }
