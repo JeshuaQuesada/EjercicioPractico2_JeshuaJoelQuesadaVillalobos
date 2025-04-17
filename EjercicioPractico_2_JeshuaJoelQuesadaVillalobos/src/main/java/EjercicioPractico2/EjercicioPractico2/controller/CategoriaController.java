@@ -45,7 +45,7 @@ public class CategoriaController {
                     firebaseStorageService.cargaImagen(
                             imagenFile,
                             "categoria",
-                            categoria.getIdCategoria()));
+                            categoria.getIdPelicula()));
         }
         categoriaService.save(categoria);
         return "redirect:/categoria/listado";

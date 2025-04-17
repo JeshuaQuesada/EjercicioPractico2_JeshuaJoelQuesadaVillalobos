@@ -9,18 +9,21 @@ import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
 
+
+//es para las peliculas
 @Data
 @Entity
-@Table(name = "categoria")
+@Table(name = "peliculas")
 public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
-    private Long idCategoria;
-    private String descripcion;
+    @Column(name = "id")
+    private Long idPelicula;
+    private String titulo;
+    private String tipo;
     private String rutaImagen;
     private boolean activo;
 
@@ -31,8 +34,8 @@ public class Categoria implements Serializable {
     public Categoria() {
     }
 
-    public Categoria(String descripcion, boolean activo) {
-        this.descripcion = descripcion;
+    public Categoria(String titulo, boolean activo) {
+        this.titulo = titulo;
         this.activo = activo;
     }
 

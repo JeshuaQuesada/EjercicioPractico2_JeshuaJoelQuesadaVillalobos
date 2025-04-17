@@ -8,22 +8,23 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
+
+//es para las funciones
 @Data
 @Entity
-@Table(name="producto")
+@Table(name="funciones")
 public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_producto")
-    private Long idProducto;
+    @Column(name="id")
+    private String id_Pelicula;
     //private Long idCategoria;  ya no se usa por el @manyToOne
-    private String descripcion;
-    private String detalle;
+    private String fecha;
+    private String hora;
     private double precio;
-    private int existencias;
-    private String rutaImagen;
+    private String sala;
     private boolean activo;
 
     @ManyToOne
@@ -34,8 +35,8 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(String descripcion, boolean activo) {
-        this.descripcion = descripcion;
+    public Producto(String id_Pelicula, boolean activo) {
+        this.id_Pelicula = id_Pelicula;
         this.activo = activo;
     }
     
